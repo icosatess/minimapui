@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8" />
+<title>Stream minimap</title>
+<meta http-equiv="refresh" content="1" />
+
+<style>
+.architecture-diagram {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.highlight {
+  position: absolute;
+  background-color: yellow;
+  opacity: 0.2;
+}
+
+.minimap-ui {
+  left: 470px;
+  top: 32px;
+  width: 230px;
+  height: 160px;
+}
+
+.minimap-server {
+  left: 220px;
+  top: 50px;
+  width: 200px;
+  height: 120px;
+}
+
+.minimap-extension {
+  left: 150px;
+  top: 340px;
+  width: 170px;
+  height: 80px;
+}
+</style>
+
+<img
+  src="/public/architecture.png"
+  class="architecture-diagram" />
+
+<div class="highlight {{.Component}}"></div>
