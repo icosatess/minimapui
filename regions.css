@@ -1,0 +1,43 @@
+/*
+Add each region as `.minimap-REGIONNAME`.
+
+Use `left` and `top` as the coordinates of the top-left of the highlight box.
+(0, 0) is the top-left of the entire image.
+
+Use `width` and `height` as the size of the highlight box.
+*/
+
+.minimap-ui {
+  left: 680px;
+  top: 0px;
+  width: 230px;
+  height: 160px;
+}
+
+.minimap-server {
+  left: 440px;
+  top: 30px;
+  width: 200px;
+  height: 120px;
+}
+
+.minimap-extension {
+  left: 380px;
+  top: 310px;
+  width: 170px;
+  height: 80px;
+}
+
+.minimap-codeserver {
+  left: 10px;
+  top: 210px;
+  width: 160px;
+  height: 90px;
+}
+
+.minimap-chatbot {
+  left: 10px;
+  top: 430px;
+  width: 170px;
+  height: 80px;
+}

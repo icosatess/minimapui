@@ -10,51 +10,17 @@
     left: 0;
   }
 
-  .highlight {
+  #highlight {
     position: absolute;
     background-color: yellow;
     mix-blend-mode: multiply;
   }
-
-  .minimap-ui {
-    left: 680px;
-    top: 0px;
-    width: 230px;
-    height: 160px;
-  }
-
-  .minimap-server {
-    left: 440px;
-    top: 30px;
-    width: 200px;
-    height: 120px;
-  }
-
-  .minimap-extension {
-    left: 380px;
-    top: 310px;
-    width: 170px;
-    height: 80px;
-  }
-
-  .minimap-codeserver {
-    left: 10px;
-    top: 210px;
-    width: 160px;
-    height: 90px;
-  }
-
-  .minimap-chatbot {
-    left: 10px;
-    top: 430px;
-    width: 170px;
-    height: 80px;
-  }
 </style>
+<link rel="stylesheet" href="regions.css">
 
 <img src="architecture.png" class="architecture-diagram" />
 
-<div id="highlight" class="highlight"></div>
+<div id="highlight"></div>
 
 <script type="module">
   const highlighterEl = document.querySelector('#highlight')
@@ -65,7 +31,7 @@
     const resultJson = await result.json()
     const component = resultJson.component
     // 2. Update the DOM as needed to highlight
-    highlighterEl.className = `highlight minimap-${component}`
+    highlighterEl.className = `minimap-${component}`
   }
 
   // 3. Set up a 1s timer
