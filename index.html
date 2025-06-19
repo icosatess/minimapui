@@ -2,7 +2,6 @@
 
 <meta charset="UTF-8" />
 <title>Stream minimap</title>
-<meta http-equiv="refresh" content="1" />
 
 <style>
   .architecture-diagram {
@@ -53,6 +52,22 @@
   }
 </style>
 
-<img src="/public/architecture.png" class="architecture-diagram" />
+<img src="architecture.png" class="architecture-diagram" />
 
-<div class="highlight {{.Component}}"></div>
+<div id="highlight" class="highlight"></div>
+
+<script type="module">
+  const highlighterEl = document.querySelector('#highlight')
+
+  async function doEverything() {
+    // 1. Make a request to minimap server getting active component
+    const result = await fetch("http://127.0.0.1:8081/component/")
+    const resultJson = await result.json()
+    const component = resultJson.component
+    // 2. Update the DOM as needed to highlight
+    highlighterEl.className = `highlight minimap-${component}`
+  }
+
+  // 3. Set up a 1s timer
+  setInterval(doEverything, 1000)
+</script>
